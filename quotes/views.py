@@ -2,8 +2,16 @@ from django.shortcuts import render, redirect
 from .models import Stock
 from .forms import StockForm
 from django.contrib import messages
+import os
+import environ
+
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+environ.Env.read_env()
 
 # Create your views here.
+api_key = env('api_key');
 
 def home(request):
 	import requests
@@ -11,8 +19,8 @@ def home(request):
 
 	if request.method == 'POST':
 		ticker = request.POST['ticker']
-		# pk_fc4c532485514621993baec0ac93ab85
-		api_request = requests.get("https://cloud.iexapis.com/stable/stock/" + ticker + "/quote?token=pk_fc4c532485514621993baec0ac93ab85")
+		
+		api_request = requests.get("https://cloud.iexapis.com/stable/stock/" + ticker + "/quote?token=" + api_key)
 		
 		try:
    			api = json.loads(api_request.content)
@@ -41,7 +49,7 @@ def add_stock(request):
 		ticker = Stock.objects.all()
 		output = []
 		for ticker_item in ticker:
-			api_request = requests.get("https://cloud.iexapis.com/stable/stock/" + str(ticker_item) + "/quote?token=pk_fc4c532485514621993baec0ac93ab85")
+			api_request = requests.get("https://cloud.iexapis.com/stable/stock/" + str(ticker_item) + "/quote?token="+ api_key)
 
 			try:
    				api = json.loads(api_request.content)
