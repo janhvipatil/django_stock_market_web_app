@@ -65,3 +65,4 @@ def delete(request, stock_id):
 		messages.success(request,("Stock has been deleted"))
 		return redirect(add_stock)
 
+
