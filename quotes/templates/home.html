@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
-
+<br/><span><h1>Hello, {{request.user}}</h1></span>
 <br/><br/>
 {% if ticker %}
 	{{ ticker }}

@@ -1,0 +1,30 @@
+body {
+  background-color: #808080;
+  color: #fff;
+}
+
+h1, h3 {
+    color: #262626;
+}
+
+.top-text {
+  color: #00b33c;
+}
+
+p {
+  padding-top: 20px;
+}
+
+.text-green {
+  font-weight: bold;
+  color: #006600;
+}
+
+.text-red {
+  font-weight: bold;
+  color: #b30000;
+}
+
+.link-color {
+  color: #262626;
+}
