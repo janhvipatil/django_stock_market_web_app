@@ -67,8 +67,8 @@ Quit the server with CTRL-BREAK.
 
 ## Credits 
 
-* [Icon design](https://www.flaticon.com/)
-* [API](https://iexcloud.io/)
+* [Icon design](https://www.flaticon.com/) Used Flaticon.com for website icon.
+* [API](https://iexcloud.io/) Got the API from IexCloud.io 
 
 ## License
 
