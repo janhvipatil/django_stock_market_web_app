@@ -1,4 +1,4 @@
-# django_stock_market_web_app
+# Stock_Market_Web_App
 
 ## About
 
